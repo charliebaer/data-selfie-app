@@ -21,22 +21,18 @@ const express = require('express');
 const app = express();
 app.listen(3000, () => console.log('listening at 3000'));
 app.use(express.static('public'));
-app.use(express.json({ limit: '1mb' }));
 
+app.use(express.json());
 
-
-app.get('/api', (request, response) => {
-    database.find({}, (err, data) => {
-        if (err) {
-            response.end();
-            return;
-        }
-        response.json(data);
-    });
-});
 
 app.post('/api', (request, response) => {
-    console.log(response.body);
-
+    console.log('request received');
+    console.log((request.body));
+    const data = request.body;
+    response.json({
+        status : 'success',
+        latitude : data.lat,
+        longitude : data.lon
+    })
 
 });
