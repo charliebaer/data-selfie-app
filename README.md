@@ -15,7 +15,7 @@ git clone https://github.com/charliebaer/data-selfie-app.git
 ```
 2. run the server from your shell
 ```javascript
-node main.js
+node server.js
 ```
 The server should start listening at port 3000
 
