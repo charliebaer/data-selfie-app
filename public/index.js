@@ -11,12 +11,11 @@ if ('geolocation' in navigator) {
         const data = { lat, lon };
         const option = {
             method: 'POST',
-            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            }
-        }
+            },
+            body: JSON.stringify(data)
+        };
 
         fetch('/api', option);
     });
